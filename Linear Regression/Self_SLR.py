@@ -9,11 +9,17 @@ class SimpleLR:
         self.c = None
 
     def fit(self, X_train, y_train) -> None:
+        # 1st Method
         num = 0
         den = 0
         for i in range(X_train.shape[0]):
             num = num + ((X_train[i] - X_train.mean()) * (y_train[i] - y_train.mean()))
             den = den + ((X_train[i] - X_train.mean()) * (X_train[i] - X_train.mean()))
+
+        # 2nd method
+        # num = np.sum((X_train - X_train.mean()).ravel() * (y_train - y_train.mean()))
+        # den = np.sum(np.power(X_train - X_train.mean(),2))
+
         self.m = num / den
         self.c = y_train.mean() - (self.m * X_train.mean())
 
