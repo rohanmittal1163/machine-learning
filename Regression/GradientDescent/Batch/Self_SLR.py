@@ -70,7 +70,7 @@ class BGDRegressor:
         print(f"Adjusted R2 Score: {adjusted_r2:.4f}")
 
 
-lr = GDRegressor(0.01, 1000)
+lr = BGDRegressor(0.01, 1000)
 lr.fit(X_train, y_train)
 y_pred = lr.predict(X_test)
 print(f"m: {lr.coef_}")

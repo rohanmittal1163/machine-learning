@@ -71,7 +71,7 @@ class MultiBGDRegressor:
         print(f"Adjusted R2 Score: {adjusted_r2:.4f}")
 
 
-lr = MultiGDRegressor(0.2, 100000)
+lr = MultiBGDRegressor(0.2, 100000)
 lr.fit(X_train, y_train)
 y_pred = lr.predict(X_test)
 print(f"m: {lr.coef_}")
